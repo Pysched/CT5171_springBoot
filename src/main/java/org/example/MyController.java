@@ -15,7 +15,7 @@ public	class	MyController	{
        DateTime time = DateTime.now();
        DateTime xmas = DateTime.parse("25/12/2023", DateTimeFormat.forPattern("dd/MM/yyyy"));
        int days = Days.daysBetween(time, xmas).getDays();
-       return days + "days left to christmas ";
+       return days + " days left to christmas ";
     }
     @RequestMapping ("/home")
         public String home(){
