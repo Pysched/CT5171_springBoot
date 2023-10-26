@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    options { disableConcurrentBuilds(abortPrevious: true) }
     stages {
         stage ('GetProject') {
             steps {
