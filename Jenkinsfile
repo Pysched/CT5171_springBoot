@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('GetProject') {
             steps {
-                git 'https://github.com/Pysched/CT5171_springBoot'
+                git 'https://github.com/Pysched/CT5171_springBoot.git'
             }
         }
         stage ('build') {
