@@ -19,15 +19,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>3.1.1</version>
-        </dependency>
 
+        </dependency>
         <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.12.5</version>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -35,7 +34,57 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>3.1.1</version>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>org.example.Main</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>org.example.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <!--    <dependencies>
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-web</artifactId>
+              <version>3.1.1</version>
+          </dependency>
+
+        <dependency>
+              <groupId>joda-time</groupId>
+              <artifactId>joda-time</artifactId>
+              <version>2.12.5</version>
+          </dependency>
+      </dependencies>
+
+      <build>
+          <plugins>
+              <plugin>
+                  <groupId>org.springframework.boot</groupId>
+                  <artifactId>spring-boot-maven-plugin</artifactId>
+                  <version>3.1.1</version>
+              </plugin>
+          </plugins>
+      </build>-->
 
 </project>
